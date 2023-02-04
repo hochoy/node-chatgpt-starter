@@ -49,9 +49,7 @@ By itself, the model does not have any conversational support, so this library u
 const clientOptions = {
   // (Optional) Parameters as described in https://platform.openai.com/docs/api-reference/completions
   modelOptions: {
-    // The model is set to text-chat-davinci-002-20221122 by default, but you can override
-    // it and any other parameters here
-    model: 'text-chat-davinci-002-20221122',
+    model: 'text-davinci-003',
   },
   // (Optional) Set custom instructions instead of "You are ChatGPT...".
   // promptPrefix: 'You are Bob, a cowboy in Western times...',
@@ -130,9 +128,8 @@ module.exports = {
   chatGptClient: {
     // (Optional) Parameters as described in https://platform.openai.com/docs/api-reference/completions
     modelOptions: {
-      // The model is set to text-chat-davinci-002-20221122 by default, but you can override
-      // it and any other parameters here
-      model: 'text-chat-davinci-002-20221122',
+      // model options: https://platform.openai.com/docs/models/gpt-3
+      model: 'text-davinci-003',
     },
     // (Optional) Set custom instructions instead of "You are ChatGPT...".
     // promptPrefix: 'You are Bob, a cowboy in Western times...',
