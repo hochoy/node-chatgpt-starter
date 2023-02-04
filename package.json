@@ -32,15 +32,10 @@
     "api-wrapper"
   ],
   "dependencies": {
-    "boxen": "^7.0.1",
-    "clipboardy": "^3.0.0",
-    "dotenv": "^16.0.3",
     "fastify": "^4.11.0",
     "gpt-3-encoder": "^1.1.4",
-    "inquirer": "^9.1.4",
     "keyv": "^4.5.2",
     "keyv-file": "^0.2.0",
-    "node-fetch": "^3.3.0",
-    "ora": "^6.1.2"
+    "node-fetch": "^3.3.0"
   }
 }
