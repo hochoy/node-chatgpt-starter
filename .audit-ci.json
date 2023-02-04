@@ -1,0 +1,7 @@
+{
+  "moderate": true,
+  "advisories": [],
+  "allowlist": [],
+  "registry": "https://registry.npmjs.org",
+  "skipDev": false
+}

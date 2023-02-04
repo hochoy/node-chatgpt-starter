@@ -1,24 +1,23 @@
 {
-  "name": "@waylaidwanderer/chatgpt-api",
-  "version": "1.7.1",
+  "name": "@hochoy/node-chatgpt-starter",
+  "version": "0.0.1",
   "description": "A ChatGPT implementation using the official ChatGPT model via OpenAI's API.",
   "main": "index.js",
   "bin": {
-    "chatgpt-api": "bin/server.js",
-    "chatgpt-cli": "bin/cli.js"
+    "chatgpt-api": "bin/server.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node bin/server.js",
     "server": "node bin/server.js",
-    "cli": "node bin/cli.js"
+    "audit": "audit-ci --config .audit-ci.json"
   },
-  "author": "waylaidwanderer",
+  "author": "hochoy",
   "license": "MIT",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waylaidwanderer/node-chatgpt-api.git"
+    "url": "git@github.com:hochoy/node-chatgpt-starter.git"
   },
   "keywords": [
     "chatgpt",
@@ -37,5 +36,8 @@
     "keyv": "^4.5.2",
     "keyv-file": "^0.2.0",
     "node-fetch": "^3.3.0"
+  },
+  "devDependencies": {
+    "audit-ci": "^6.6.1"
   }
 }
