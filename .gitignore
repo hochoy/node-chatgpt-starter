@@ -1,5 +1,5 @@
-# Ignore settings.js as it contains API key (todo: could move secrets to its own file)
-settings.js
+# ignore secrets
+.env 
 
 ### VisualStudioCode template
 .vscode/*
