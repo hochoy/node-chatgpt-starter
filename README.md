@@ -79,9 +79,15 @@ You can install and run the package locally:
 1. Clone this repository
 2. Install dependencies with `npm install`
 3. Rename `settings.example.js` to `settings.js` in the root directory and change the settings where required.
-4. Start the server using `npm start` or `npm run server`
+4. Remember to include your API key in `settings.js`, and ensure that you do not accidentally check in your API key. `settings.js` is current git-ignored.
+5. Start the server using `npm start` or `npm run server`
 
-To start a conversation with ChatGPT, send a POST request to the server's `/conversation` endpoint with a JSON body in the following format:
+A postman collection and postman environment has been added to showcase what the API can do:
+
+- ChatGPT-collection.postman_collection.json
+- ChatGPT-environment.postman_environment.json
+
+Alternatively, if you want to get started making HTTP requests against the API. send a POST request to the server's `/conversation` endpoint with a JSON body in the following format:
 
 ```JSON
 {
@@ -110,6 +116,8 @@ If there was an error sending the message to ChatGPT:
     "error": "There was an error communicating with ChatGPT."
 }
 ```
+
+If you configure `settings.js` to be `debug:true`, the error logs may reveal the issue with the connection to OpenAPI.
 
 ### Modifying the settings.js file
 
