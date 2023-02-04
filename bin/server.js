@@ -82,7 +82,10 @@ server.post("/conversation", async (request, reply) => {
   }
 });
 
-server.listen({ port: settings.port || 3000, host: "0.0.0.0" }, (error) => {
+const port = settings.port || 3000;
+
+server.listen({ port, host: "0.0.0.0" }, (error) => {
+  console.log(`server starting at port: ${port}`);
   if (error) {
     console.error(error);
     process.exit(1);
