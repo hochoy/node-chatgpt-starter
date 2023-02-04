@@ -1,0 +1,161 @@
+{
+  "info": {
+    "name": "ChatGPT-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/conversation - initiate convo",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// this will persist the conversationID until you manually change it in the request body",
+              "const conversationId = JSON.parse(pm.request.body.raw).conversationId",
+              "pm.environment.set(\"conversationId\", conversationId)",
+              "",
+              "// given a single conversation history, you can pick the specific OpenAPI response to re-start the conversation from",
+              "// for example,",
+              "// Conversation ID = ABC",
+              "// Request 1",
+              "// Response 1 = messageId-1",
+              "// Request 2",
+              "// Response 2 = messageId-2",
+              "// Request 3",
+              "// Response 3 = messageId-3",
+              "// Request 4, please use messageId-2 as the parent messageId",
+              "// Response 5 = messageId-4, where messageId-2 is used as the context to respond to the user",
+              "const messageId = pm.response.json().messageId",
+              "pm.environment.set(\"parentMessageId\", messageId)",
+              "console.log(`setting parentMessageId as ${messageId}`)"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"Write me a 2 line poem about Rome\",\n    \"conversationId\": \"rome-conv-2\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/conversation",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["conversation"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/conversation - follow-up on convo",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// this will persist the conversationID until you manually change it in the request body",
+              "const conversationId = JSON.parse(pm.request.body.raw).conversationId",
+              "pm.environment.set(\"conversationId\", conversationId)",
+              "",
+              "// given a single conversation history, you can pick the specific OpenAPI response to re-start the conversation from",
+              "// for example,",
+              "// Conversation ID = ABC",
+              "// Request 1",
+              "// Response 1 = messageId-1",
+              "// Request 2",
+              "// Response 2 = messageId-2",
+              "// Request 3",
+              "// Response 3 = messageId-3",
+              "// Request 4, please use messageId-2 as the parent messageId",
+              "// Response 5 = messageId-4, where messageId-2 is used as the context to respond to the user",
+              "const messageId = pm.response.json().messageId",
+              "pm.environment.set(\"parentMessageId\", messageId)",
+              "console.log(`setting parentMessageId as ${messageId}`)"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"Can you do the same for Paris?\",\n    \"conversationId\": \"{{conversationId}}\",\n    \"parentMessageId\": \"{{parentMessageId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/conversation",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["conversation"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/conversation - remember history of convo",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// this will persist the conversationID until you manually change it in the request body",
+              "const conversationId = JSON.parse(pm.request.body.raw).conversationId",
+              "pm.environment.set(\"conversationId\", conversationId)",
+              "",
+              "// given a single conversation history, you can pick the specific OpenAPI response to re-start the conversation from",
+              "// for example,",
+              "// Conversation ID = ABC",
+              "// Request 1",
+              "// Response 1 = messageId-1",
+              "// Request 2",
+              "// Response 2 = messageId-2",
+              "// Request 3",
+              "// Response 3 = messageId-3",
+              "// Request 4, please use messageId-2 as the parent messageId",
+              "// Response 5 = messageId-4, where messageId-2 is used as the context to respond to the user",
+              "const messageId = pm.response.json().messageId",
+              "pm.environment.set(\"parentMessageId\", messageId)",
+              "console.log(`setting parentMessageId as ${messageId}`)"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"What was the second, third and last thing I asked you?\",\n    \"conversationId\": \"{{conversationId}}\",\n    \"parentMessageId\": \"{{parentMessageId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/conversation",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["conversation"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
