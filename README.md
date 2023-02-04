@@ -1,5 +1,12 @@
 # Node ChatGPT Starter kit
 
+This is originally a fork of https://github.com/waylaidwanderer/node-chatgpt-api.
+Changes will be primarily focused on:
+
+- use as a starter kit
+- addressing security vulnerabilities
+- respecting the terms and conditions of OpenAI usage
+
 ## Temporary notice about model usage
 
 The original implementation of this package uses a GPT model(s) that is used by the ChatGPT web portal. This model was not publicly offered by OpenAI. Using this model circumvented the cost (in the form of OpenAI credits) associated with making requests to the OpenAI API. I do NOT recommend using that model. Instead, please use the official options provided at https://platform.openai.com/docs/models/overview. Note that these will consume OpenAI credits.
