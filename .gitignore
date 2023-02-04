@@ -16,4 +16,4 @@ settings.js
 node_modules/
 
 # Keyv local cache
-./cache.json
+cache.json
