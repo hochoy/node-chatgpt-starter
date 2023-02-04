@@ -1,23 +1,15 @@
 # Node ChatGPT Starter kit
 
-This is originally a fork of https://github.com/waylaidwanderer/node-chatgpt-api.
-Changes will be primarily focused on:
+1. [Differences between the OpenAI documentation and this service](#differences-between-openai-documentation-and-this-service)
+2. [Features](#features)
+3. [Getting Started](#getting-started)
+4. [Acknowledgements and future directions](#acknowledgements-and-future-direction)
+5. [Warning about model usage](#warning-about-model-usage)
+6. [Alternative repositories](#alternative-repositories)
+7. [Contributing](#contributing)
+8. [License](#license)
 
-- use as a starter kit
-- addressing security vulnerabilities
-- respecting the terms and conditions of OpenAI usage
-
-## Temporary notice about model usage
-
-The original implementation of this package uses a GPT model(s) that is used by the ChatGPT web portal. This model was not publicly offered by OpenAI. Using this model circumvented the cost (in the form of OpenAI credits) associated with making requests to the OpenAI API. I do NOT recommend using that model. Instead, please use the official options provided at https://platform.openai.com/docs/models/overview. Note that these will consume OpenAI credits.
-
-The model used by the original author is `text-chat-davinci-002-20221122` as of the time of forking. It was extracted from network requests as per comments from the original author. We will be removing reference to that model while doing this cleanup. It will however remain in git history.
-
-## Alternatives
-
-There is a python implementation at https://github.com/acheong08/ChatGPT. We may or may not have time to review and clean up that implementation. The python implementation appears to be more fully-featured.
-
-## Differences between the OpenAI documentation and this service
+## Differences between OpenAI documentation and this service
 
 By itself, the model does not have any conversational support, so this library uses a cache to store conversations and pass them to the model as context. This allows you to have persistent conversations with ChatGPT in a nearly identical way to the official website.
 
@@ -42,12 +34,12 @@ By itself, the model does not have any conversational support, so this library u
 
 ## Usage
 
-### Option 1: Using the client class
+### Option 1: Importing the ChatGPTClient class
 
 ```JS
+import ChatGPTClient from "../src/ChatGPTClient.js";
 
 const clientOptions = {
-  // (Optional) Parameters as described in https://platform.openai.com/docs/api-reference/completions
   modelOptions: {
     model: 'text-davinci-003',
   },
@@ -167,6 +159,28 @@ This means my implementation or the raw model may not behave exactly the same in
   > Current date: 2023-01-31"
 
   As OpenAI updates ChatGPT, this preamble may also change. The default prompt prefix in my implementation attempts to replicate a similar behavior to the current ChatGPT model.
+
+## Acknowledgements and future direction
+
+This is originally a fork of https://github.com/waylaidwanderer/node-chatgpt-api.
+
+Additional acknowledgements to @queercat for identifying the issue of needing to specific `host: 0.0.0.0` for fastify to work in Docker as per https://github.com/fastify/fastify-cli/issues/57. The initial Dockerfile in this repo is also based on the work at https://github.com/queercat/gpt-api-docker
+
+Changes will be primarily focused on:
+
+- use as a starter kit
+- addressing security vulnerabilities
+- respecting the terms and conditions of OpenAI usage
+
+## Warning about model usage
+
+The original implementation of this package uses a GPT model(s) that is used by the ChatGPT web portal. This model was not publicly offered by OpenAI. Using this model circumvented the cost (in the form of OpenAI credits) associated with making requests to the OpenAI API. I do NOT recommend using that model. Instead, please use the official options provided at https://platform.openai.com/docs/models/overview. Note that these will consume OpenAI credits.
+
+The model used by the original author is `text-chat-davinci-002-20221122` as of the time of forking. It was extracted from network requests as per comments from the original author. We will be removing reference to that model while doing this cleanup. It will however remain in git history.
+
+## Alternative repositories
+
+There is a python implementation at https://github.com/acheong08/ChatGPT. We may or may not have time to review and clean up that implementation. The python implementation appears to be more fully-featured.
 
 ## Contributing
 
