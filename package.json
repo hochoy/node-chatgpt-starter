@@ -18,7 +18,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git@github.com:hochoy/node-chatgpt-starter.git"
+    "url": "git+ssh://git@github.com/hochoy/node-chatgpt-starter.git"
   },
   "keywords": [
     "chatgpt",
@@ -41,5 +41,12 @@
   },
   "devDependencies": {
     "audit-ci": "^6.6.1"
+  },
+  "bugs": {
+    "url": "https://github.com/hochoy/node-chatgpt-starter/issues"
+  },
+  "homepage": "https://github.com/hochoy/node-chatgpt-starter#readme",
+  "directories": {
+    "doc": "docs"
   }
 }
