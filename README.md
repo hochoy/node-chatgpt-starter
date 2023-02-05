@@ -1,6 +1,6 @@
 # Node ChatGPT Starter kit
 
-1. [Differences between the OpenAI documentation and this service](#differences-between-openai-documentation-and-this-service)
+1. [Differences between the OpenAI documentation and this starter kit](#differences-between-openai-documentation-and-this-starter-kit)
 2. [Features](#features)
 3. [Getting Started](#getting-started)
 4. [Acknowledgements and future directions](#acknowledgements-and-future-direction)
@@ -9,7 +9,7 @@
 7. [Contributing](#contributing)
 8. [License](#license)
 
-## Differences between OpenAI documentation and this service
+## Differences between OpenAI documentation and this starter kit
 
 By itself, the model does not have any conversational support, so this library uses a cache to store conversations and pass them to the model as context. This allows you to have persistent conversations with ChatGPT in a nearly identical way to the official website.
 
