@@ -1,0 +1,19 @@
+# Defines the local environment configuration for our application
+#
+# Usage:
+#   docker-compose build
+#   docker-compose up chatgpt-api
+
+version: '3'
+services:
+  chatgpt-api:
+    container_name: chatgpt-api
+    build: .
+    # there are many ways environment variables get picked up by docker-compose
+    # https://docs.docker.com/compose/environment-variables/set-environment-variables/
+    # in our case, it would pick it up from '.env'
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+
+    ports:
+      - '3000:3000'
