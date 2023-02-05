@@ -8,9 +8,10 @@
     "start": "node src/server.js",
     "server": "node src/server.js",
     "audit": "audit-ci --config .audit-ci.json",
-    "docker:build": "docker build . -t node-chatgpt-starter",
-    "docker:run": "docker run -e $(cat .env | grep OPENAI_API_KEY) -p 3000:3000 node-chatgpt-starter",
-    "docker:shell": "docker run -e $(cat .env | grep OPENAI_API_KEY) -it --entrypoint=sh node-chatgpt-starter"
+    "docker:build": "docker build . -t chatgpt-api",
+    "docker:run": "docker run --env-file=.env -p 3000:3000 chatgpt-api",
+    "docker:shell": "docker run --env-file=.env -it --entrypoint=sh chatgpt-api",
+    "compose:up": "docker-compose --env-file=.env up"
   },
   "author": "hochoy",
   "license": "MIT",
