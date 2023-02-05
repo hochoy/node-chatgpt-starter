@@ -91,8 +91,18 @@ Configuring `settings.js` to be `debug:true`, will log out issues with the conne
 
 ### Usage 2: Importing the ChatGPTClient class
 
+```bash
+# Run the following commands to clone and link the repo to your global npm
+git clone git@github.com:hochoy/node-chatgpt-starter.git
+cd node-chatgpt-starter
+npm link
+
+# navigate to your project, and run the following to link your current repo to the local node-chatgpt-starter
+npm link node-chatgpt-starter
+```
+
 ```JS
-import ChatGPTClient from "../src/ChatGPTClient.js";
+import ChatGPTClient from "node-chatgpt-starter";
 
 const clientOptions = {
   modelOptions: {

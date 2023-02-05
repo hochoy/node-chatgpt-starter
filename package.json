@@ -1,6 +1,6 @@
 {
   "name": "node-chatgpt-starter",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A ChatGPT implementation using the official ChatGPT model via OpenAI's API.",
   "main": "index.js",
   "scripts": {
