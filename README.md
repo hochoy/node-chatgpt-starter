@@ -72,7 +72,7 @@ const response3 = await chatGptClient.sendMessage('Now write it in French.', { c
 console.log(response3.response); // Les chats sont les meilleurs animaux de compagnie du monde.
 ```
 
-### Option 2. Deploying the API Server
+### Option 2. Deploying the API Server locally
 
 You can install and run the server locally:
 
@@ -123,7 +123,9 @@ If there was an error sending the message to ChatGPT:
 
 Configuring `settings.js` to be `debug:true`, will log issues with the connection to OpenAI.
 
-### Modifying the settings.js file
+###
+
+## Modifying the settings.js file
 
 ```JS
 module.exports = {
@@ -174,7 +176,7 @@ This means my implementation or the raw model may not behave exactly the same in
 
 This is originally a fork of https://github.com/waylaidwanderer/node-chatgpt-api.
 
-Additional acknowledgements to @queercat for identifying the issue of needing to specific `host: 0.0.0.0` for fastify to work in Docker as per https://github.com/fastify/fastify-cli/issues/57. The initial Dockerfile in this repo is also based on the work at https://github.com/queercat/gpt-api-docker
+Additional acknowledgements to @queercat for identifying the issue of needing to specific `host: 0.0.0.0` for fastify to work in Docker as per https://github.com/fastify/fastify-cli/issues/57. The initial Dockerfile in this repo was also inspired by the work at https://github.com/queercat/gpt-api-docker
 
 Changes will be primarily focused on:
 
