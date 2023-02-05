@@ -101,6 +101,7 @@ cd node-chatgpt-starter
 npm link
 
 # navigate to your project, and run the following to link your current repo to the local node-chatgpt-starter
+cd <my_project>
 npm link node-chatgpt-starter
 ```
 
