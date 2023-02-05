@@ -197,7 +197,7 @@ export default class ChatGPTClient {
         `${promptPrefix}${newPromptBody}${promptSuffix}`
       );
       // Always add the first (technically last) message, even if it puts us over the token limit.
-      // TODO: throw an error if the first message is over 3000 tokens
+      // TODO: throw an error if the first message is over 4000 tokens
       if (promptBody && newTokenCount > maxTokenCount) {
         // This message would put us over the token limit, so don't add it.
         break;

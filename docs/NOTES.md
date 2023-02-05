@@ -17,7 +17,7 @@ Below is unedited commentary from the original forked repository
 
     - Conversations are not tied to any user IDs, so if that's important to you, you should implement your own user ID system.
     - ChatGPT's model parameters (temperature, frequency penalty, etc.) are unknown, so I set some defaults that I thought would be reasonable.
-    - Conversations are limited to roughly the last 3000 tokens, so earlier messages may be forgotten during longer conversations.
+    - Conversations are limited to roughly the last 4000 tokens, so earlier messages may be forgotten during longer conversations.
       - This works in a similar way to ChatGPT, except I'm pretty sure they have some additional way of retrieving context from earlier messages when needed (which can probably be achieved with embeddings, but I consider that out-of-scope for now).
     - It is well known that, as part of the fine-tuning, ChatGPT had the following preamble:
 

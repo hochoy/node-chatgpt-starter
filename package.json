@@ -12,7 +12,7 @@
     "server": "node src/server.js",
     "audit": "audit-ci --config .audit-ci.json",
     "docker:build": "docker build . -t chatgpt-api",
-    "docker:run": "docker run --env-file=.env -p 3000:3000 chatgpt-api",
+    "docker:run": "docker run --env-file=.env -p 4000:4000 chatgpt-api",
     "docker:shell": "docker run --env-file=.env -it --entrypoint=sh chatgpt-api",
     "compose:up": "docker-compose --env-file=.env up"
   },

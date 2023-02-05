@@ -13,6 +13,6 @@ RUN npm install
 COPY ./src /home/node/app/src
 COPY ./settings.js /home/node/app/settings.js
 
-EXPOSE 3000
+EXPOSE 4000
 ENTRYPOINT ["npm"]
 CMD ["start"]

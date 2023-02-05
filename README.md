@@ -50,15 +50,15 @@ By itself, the model does not have any conversational support, so this library u
 git clone git@github.com:hochoy/node-chatgpt-starter.git
 cd node-chatgpt-starter
 
-# Option 1: Either of these options will boot up the server on port 3000 on your machine
+# Option 1: Either of these options will boot up the server on port 4000 on your machine
 npm run start
 npm run server
 
-# Option 2: Running the following will spin up a container instance with port 3000 exposed
+# Option 2: Running the following will spin up a container instance with port 4000 exposed
 npm run docker:build
 npm run docker:run
 
-# Option 3: Running this will also spin up the container instance with port 3000 exposed. The compose file is intended to spin up other (optional) infrastructure in the future
+# Option 3: Running this will also spin up the container instance with port 4000 exposed. The compose file is intended to spin up other (optional) infrastructure in the future
 npm run compose:up
 ```
 
@@ -69,7 +69,7 @@ To get started making calls to the API Server, you can import the following into
 - `./postman/ChatGPT-collection.postman_collection.json`
 - `./postman/ChatGPT-environment.postman_environment.json`
 
-Basically, the collections will send a HTTP POST request to the `localhost:3000/conversation` with this JSON body structure:
+Basically, the collections will send a HTTP POST request to the `localhost:4000/conversation` with this JSON body structure:
 
 ```JSON
 {

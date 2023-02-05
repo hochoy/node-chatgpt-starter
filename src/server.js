@@ -91,7 +91,7 @@ server.post("/conversation", async (request, reply) => {
   }
 });
 
-const port = settings.port || 3000;
+const port = settings.port || 4000;
 
 server.listen({ port, host: "0.0.0.0" }, (error) => {
   console.log(`server starting at port: ${port}`);

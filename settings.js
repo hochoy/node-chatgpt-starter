@@ -16,8 +16,8 @@ export default {
   // Options for the Keyv cache, see https://www.npmjs.com/package/keyv.
   // This is used for storing conversations, and supports additional drivers (conversations are stored in memory by default)
   cacheOptions: {},
-  // The port the server will run on (optional, defaults to 3000)
-  port: 3000,
+  // The port the server will run on (optional, defaults to 4000)
+  port: 4000,
   // If set, ChatGPTClient will use `keyv-file` to store conversations to this JSON file instead of in memory.
   // `cacheOptions.store` will override this if set
   storageFilePath: "./cache.json",
