@@ -47,15 +47,18 @@ By itself, the model does not have any conversational support, so this library u
 ### Usage 1: Deploying the API server
 
 ```bash
-# Either of these options will boot up the server on port 3000 on your machine
+git clone git@github.com:hochoy/node-chatgpt-starter.git
+cd node-chatgpt-starter
+
+# Option 1: Either of these options will boot up the server on port 3000 on your machine
 npm run start
 npm run server
 
-# Running the following will spin up a container instance with port 3000 exposed
+# Option 2: Running the following will spin up a container instance with port 3000 exposed
 npm run docker:build
 npm run docker:run
 
-# Running this will also spin up the container instance with port 3000 exposed. The compose file is intended to spin up other (optional) infrastructure in the future
+# Option 3: Running this will also spin up the container instance with port 3000 exposed. The compose file is intended to spin up other (optional) infrastructure in the future
 npm run compose:up
 ```
 
