@@ -60,7 +60,7 @@ const cacheOptions = {
   // store: new KeyvFile({ filename: 'cache.json' }),
 };
 
-const chatGptClient = new ChatGPTClient('OPENAI_API_KEY', clientOptions, cacheOptions);
+const chatGptClient = new ChatGPTClient('<OPENAI_API_KEY>', clientOptions, cacheOptions);
 
 const response = await chatGptClient.sendMessage('Hello!');
 console.log(response); // { response: 'Hi! How can I help you today?', conversationId: '...', messageId: '...' }
