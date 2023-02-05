@@ -4,6 +4,15 @@ import fs from "fs";
 import { pathToFileURL } from "url";
 import ChatGPTClient from "./ChatGPTClient.js";
 import { KeyvFile } from "keyv-file";
+import { InvalidOpenAIKeyError } from "./errors.js";
+import * as dotenv from "dotenv";
+dotenv.config();
+
+if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY.length < 3) {
+  throw new InvalidOpenAIKeyError(
+    "Please provide OPENAI_API_KEY as environment variable or include in .env file"
+  );
+}
 
 const arg = process.argv.find((arg) => arg.startsWith("--settings"));
 let path;
@@ -45,7 +54,7 @@ if (settings.storageFilePath && !settings.cacheOptions.store) {
 }
 
 const chatGptClient = new ChatGPTClient(
-  settings.openaiApiKey,
+  process.env.OPENAI_API_KEY,
   settings.chatGptClient,
   settings.cacheOptions
 );

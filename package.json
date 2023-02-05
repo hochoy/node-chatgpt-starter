@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
     "server": "node src/server.js",
-    "audit": "audit-ci --config .audit-ci.json"
+    "audit": "audit-ci --config .audit-ci.json",
+    "docker:build": "docker build . -t node-chatgpt-starter",
+    "docker:run": "docker run -e $(cat .env | grep OPENAI_API_KEY) -p 3000:3000 node-chatgpt-starter",
+    "docker:shell": "docker run -e $(cat .env | grep OPENAI_API_KEY) -it --entrypoint=sh node-chatgpt-starter"
   },
   "author": "hochoy",
   "license": "MIT",
@@ -28,6 +31,7 @@
     "api-wrapper"
   ],
   "dependencies": {
+    "dotenv": "^16.0.3",
     "fastify": "^4.11.0",
     "gpt-3-encoder": "^1.1.4",
     "keyv": "^4.5.2",
