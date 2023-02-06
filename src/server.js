@@ -62,6 +62,7 @@ const chatGptClient = new ChatGPTClient(
 const server = fastify();
 
 server.post("/conversation", async (request, reply) => {
+  console.log(JSON.stringify(request.body, null, 2));
   const conversationId = request.body.conversationId
     ? request.body.conversationId.toString()
     : undefined;
