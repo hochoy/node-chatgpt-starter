@@ -36,7 +36,7 @@
   ],
   "dependencies": {
     "dotenv": "^16.0.3",
-    "fastify": "^4.11.0",
+    "fastify": "^4.15.0",
     "gpt-3-encoder": "^1.1.4",
     "keyv": "^4.5.2",
     "keyv-file": "^0.2.0",
